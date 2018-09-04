@@ -83,7 +83,9 @@ export default {
 
 }
 .floor-down div:nth-child(odd){
-border-right: 1px solid #eeeeee;
- width: calc(50% - 1px);
+border-right: .5px solid #eeeeee;
+}
+.floor-down div:nth-child(even){
+border-left: .5px solid #eeeeee;
 }
 </style>

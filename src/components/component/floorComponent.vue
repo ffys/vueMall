@@ -53,7 +53,7 @@ export default {
 }
 .floor-title {
   width: 100%;
-  font-size: 16px;
+  font-size: 1rem;
   text-align: center;
   padding: .3rem;
   border-bottom: 1px solid #eeeeee;

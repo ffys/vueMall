@@ -1,9 +1,8 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
-let ObjectId = Schema.Types.ObjectId
 
 const goodsSchema = new Schema({
-  ID: {unique: true, type: String, default: ObjectId},
+  ID: {unique: true, type: String},
   GOODS_SERIAL_NUMBER: String,
   SHOP_ID: String,
   SUB_ID: String,

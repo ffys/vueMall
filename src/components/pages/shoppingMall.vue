@@ -1,17 +1,6 @@
 <template>
-  <div>
-    <!-- search-bar -->
-    <div class="search-bar">
-      <van-row>
-        <van-col span="3">
-          <img :src="locationIcon" width="70%" alt="" class="location-icon">
-        </van-col>
-        <van-col span="16"><input type="text" placeholder="查找" class="search-input"></van-col>
-        <van-col span="5">
-          <van-button size="mini" class="search-button">搜索</van-button>
-          </van-col>
-       </van-row>
-    </div>
+  <div class="content">
+
     <!-- Swiper area -->
     <div class="swiper-area">
       <van-swipe :autoplay="3000">
@@ -87,7 +76,6 @@ export default {
       swiperOption: {
         slidesPerView: 3
       },
-      locationIcon: require('../../assets/images/icon/location.png'),
       banerList: [],
       category: [],
       adBanner: '',
@@ -155,34 +143,8 @@ export default {
 </script>
 
 <style scoped>
-#app > div {
+#app .content  {
   background-color: #eeeeee;
-}
-.search-bar {
-  height: 2.2rem;
-  background-color: #e5017d;
-  line-height: 2.2rem;
-  overflow: hidden;
-}
-.location-icon {
-  padding: 0.2rem 0.4rem;
-}
-.search-input {
-  width: 100%;
-  height: 1.5rem;
-  border: none;
-  border-bottom: 1px solid #ffffff;
-  background-color: #e5017d;
-  color: #ffffff;
-}
-.search-button {
-  width: 80%;
-  height: 1.3rem;
-  margin: 0 10%;
-}
-.swiper-area {
-  clear: both;
-  overflow: hidden;
 }
 .swiper-area img{
   width: 100%;
@@ -191,7 +153,7 @@ export default {
   background-color: #ffffff;
   margin: 0 0.3rem 0.3rem 0.3rem;
   border-radius: 0.3rem;
-  font-size: 14px;
+  font-size: .8rem;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -207,12 +169,12 @@ export default {
 }
 .recommend-title {
   color: #e5017d;
-  font-size: 16px;
+  font-size: 1rem;
   padding: 0.3rem;
   border-bottom: 1px solid #eeeeee;
 }
 .recommend-body {
-  font-size: 14px;
+  font-size: .8rem;
   border-bottom: 1px solid #eeeeee;
   text-align: center;
 }
@@ -229,7 +191,7 @@ export default {
   visibility: hidden;
 }
 .hot-title{
-  font-size: 16px;
+  font-size: 1rem;
   padding: .3rem;
   text-align: center;
   color: #e5017d;

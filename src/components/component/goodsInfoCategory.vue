@@ -1,10 +1,10 @@
 <template>
  <div class="goods-item" @click="goGoodsPage()">
      <div class="goods-image">
-         <img :src="goods.image">
+         <img :src="goods.IMAGE1" @error="imgError">
      </div>
-     <div class="goods-name">{{goods.name}}</div>
-     <div class="goods-price">{{goods.price | moneyFilter}}</div>
+     <div class="goods-name">{{goods.NAME}}</div>
+     <div class="goods-price">￥{{goods.PRESENT_PRICE | moneyFilter}} <del class="old-price">￥{{goods.ORI_PRICE | moneyFilter}}</del></div>
  </div>
 </template>
 
@@ -14,10 +14,11 @@ export default {
   props: {goods: {
     default: function () {
       return [
-        {image: ' '},
-        {name: ''},
-        {price: ''},
-        {goodsId: ''}
+        {IMAGE1: ' '},
+        {NAME: ''},
+        {ORI_PRICE: ''},
+        {PRESENT_PRICE: ''},
+        {ID: ''}
       ]
     }
   }},
@@ -28,8 +29,12 @@ export default {
   },
   methods: {
     goGoodsPage () {
-      this.$router.push({name: 'goods', query: {goodsId: this.goods.goodsId}})
+      this.$router.push({name: 'goods', query: {goodsId: this.goods.ID}})
+    },
+    imgError () {
+      this.goods.IMAGE1 = require('../../assets/images/imgError.png')
     }
+
   },
   filters: {
     moneyFilter (money) {
@@ -49,7 +54,7 @@ export default {
 }
 .goods-name{
     width:100%;
-    font-size: .8rem;
+    font-size: 0.8rem;
     display: inline-block;
     overflow: hidden;
     line-height: 1.2em;
@@ -59,8 +64,12 @@ export default {
 .goods-price{
     width:100%;
     text-align: center;
-    font-size: 1rem;
+    font-size: 0.8rem;
     color: #e5017d;
     line-height: 1.4em;
+}
+.old-price{
+  font-size: 0.8rem;
+  color: #666666;
 }
 </style>

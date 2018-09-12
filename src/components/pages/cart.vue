@@ -14,10 +14,10 @@
                     </svg>
                     <input type="checkbox" checked style="display:none">
                 </div>
-                <div class="cart-img">
+                <div class="cart-img" @click="goGoods(item.goodsId)">
                     <img :src="item.image" :alt="item.name" width='100%'>
                 </div>
-                <div class="cart-info">
+                <div class="cart-info" @click="goGoods(item.goodsId)">
                     <p>{{item.name}}</p>
                     <p>
                         <span class="price">￥{{item.price | moneyFilter}}</span>
@@ -80,6 +80,10 @@ export default {
     // 返回事件
     goBack () {
       this.$router.go(-1)
+    },
+    // 点击进入商品详情页
+    goGoods (goodsId) {
+      this.$router.push({name: 'goods', query: {goodsId: goodsId}})
     },
     // 启动编辑购物车事件
     clickRight () {

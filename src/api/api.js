@@ -1,5 +1,5 @@
 const BASEURL = ' https://www.easy-mock.com/mock/5b7068de47165d690c031ac8/vueMall/'
-const LOCALURL = 'http://68.168.142.248:3000/'
+const LOCALURL = /* 'http://localhost:3000 '  */ 'http://68.168.142.248:3000/'
 const API = {
   getShoppingMallInfo: BASEURL + 'index',
   getGoodsInfo: BASEURL + 'getGoodsInfo',

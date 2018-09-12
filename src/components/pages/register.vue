@@ -70,7 +70,9 @@ export default {
         // 如果返回code=200,代表注册成功，我们给用户作Tast提示
         if (response.data.code === 200) {
           Toast.success('注册成功,返回首页')
-          this.goBack()
+          let userInfo = {username: this.username}
+          localStorage.user = JSON.stringify(userInfo)
+          this.$router.push('/')
         } else if (response.data.message === '用户名重复') {
           this.openLoading = false
           Toast.fail('注册失败')

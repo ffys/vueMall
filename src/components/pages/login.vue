@@ -12,7 +12,7 @@
         v-model="username"
         label="用户名"
         icon="clear"
-        placeholder="请输入用户名"
+        placeholder="root123"
         required
         @click-icon="username = ''"
         :error-message='usernameErrorMsg'
@@ -22,7 +22,7 @@
         v-model="password"
         type="password"
         label="请输入密码"
-        placeholder="请输入密码"
+        placeholder="root123"
         required
         :error-message='passwordErrorMsg'
         >
@@ -77,7 +77,7 @@ export default {
         if (response.data.code === 200 && response.data.passwordok === true) {
           new Promise((resolve, reject) => {
             let userInfo = {username: this.username}
-            localStorage.setItem('user', JSON.stringify(userInfo))
+            localStorage.user = JSON.stringify(userInfo)
             setTimeout(() => { resolve() }, 500)
           }).then(() => {
             console.log(localStorage.user)

@@ -13,10 +13,29 @@
 export default {
   data () {
     return {
-      active: 0
+      active: 0,
+      nowPath: '' // 当前路径
     }
   },
+  created () {
+    this.changeTabBarActive()
+  },
+  updated () {
+    this.changeTabBarActive()
+  },
   methods: {
+    changeTabBarActive () {
+      this.nowPath = this.$route.path
+      if (this.nowPath === '/cart') {
+        this.active = 2
+      } else if (this.nowPath === '/shopMall') {
+        this.active = 0
+      } else if (this.nowPath === '/categoryList') {
+        this.active = 1
+      } else if (this.nowPath === '/user') {
+        this.active = 3
+      }
+    },
     changeTabbar (active) {
       console.log(active)
       switch (active) {
@@ -53,5 +72,8 @@ export default {
 }
 .van-tabbar{
   height:3.1rem;
+}
+.van-tabbar-item--active {
+    color: rgb(232, 45, 137);
 }
 </style>

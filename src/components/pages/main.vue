@@ -26,8 +26,6 @@ export default {
   methods: {
     loginTest () {
       if (localStorage.user) {
-        let user = JSON.parse(localStorage.user)
-        Toast.success(user.username + '已登录')
       } else {
         Toast.fail('您还没有登录，将跳转到登录界面')
         this.$router.push('/login')
